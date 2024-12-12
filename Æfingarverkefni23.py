@@ -46,23 +46,19 @@ class squareMare:
         self.breidd = b
     
     def ummal(self):
-        self.lengd *= 2
-        self.breidd *= 2
-        return self.lengd + self.breidd
+        return (self.lengd + self.breidd) * 2
     
     def flatarmal(self):
         return self.lengd * self.breidd
  
     def __str__(self):
-        return f"Flatarmál: {self.lengd}, Ummál: {self.ummal}" 
+        return f"Flatarmál: {self.flatarmal()}, Ummál: {self.ummal()}" 
 
 def main3():
-    ummal = squareMare(10,10)
-    flatarmal = squareMare(10,10)
-    flatarmal.flatarmal()
-    ummal.ummal()
+    kassi = squareMare(10,10)
+    print(kassi)
 
-    print(flatarmal)
-    print(ummal)
-    
-main3()
+
+
+    # print(f"Ummál: {kassi.ummal()}")
+    # print(f"Flatarmál: {kassi.flatarmal()}")
