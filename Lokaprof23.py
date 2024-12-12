@@ -82,4 +82,34 @@ def spurning6():
 
 
 def spurning7():
+    orðabók = {}
+    with open("HanSolo.txt", "r") as skraInn:
+        for line in skraInn:
+            snyrtaLinu = line.replace(",", " ").replace(".", " ")
+            orðalisti = snyrtaLinu.split()
+            for orð in orðalisti:
+                if orð in orðabók:
+                    orðabók[orð] += 1
+                else:
+                    orðabók[orð] = 1
+    summaOrða = sum(orðabók.values())
+
+    algengastaOrð = ""
+    tiðni_algengasta = 0
+
+    for orð, tíðni in orðabók.items():
+        if tíðni > tiðni_algengasta:
+            algengastaOrð = orð
+            tiðni_algengasta = tíðni
     
+    wordCount = 0
+    for key in orðabók.values():
+        if key > 1:
+            wordCount +=1
+
+    print("Fjöldi orðanna í skránni eru: ", summaOrða)
+    print("Algengasta orðið er: ",algengastaOrð)
+    print("Orð sem koma oftar fyrir en einu sinni eru: ", wordCount)
+ 
+
+spurning7()
