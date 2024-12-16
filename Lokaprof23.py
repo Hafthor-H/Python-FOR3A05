@@ -1,5 +1,3 @@
-
-
 def spurning1():
     artal = int(input("Sláðu inn ártal: "))
     if artal % 1000 == 0:
